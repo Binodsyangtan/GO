@@ -3,13 +3,18 @@ package main
 import "fmt"
 
 
-func square(num int) int{
-	return num*num
+func swap(a, b int) (int,int){
+	return b, a
 	
 }
 
 func main(){
-	result := square(5)
-	fmt.Println("result:",result)
+	x, y := 3, 5
+	fmt.Println("before swap:", x,y)
+
+	//call swap function 
+	x, y = swap(x,y)
+
+	fmt.Println("after swap:", x, y)
 
 }
