@@ -9,6 +9,7 @@ import "fmt"
 // }
 
 func main(){
+	
 	//arrays fixed sized cannot increase of decrease its sized later
 	var marks [5]int = [5]int{90,20,40,30,10}
 
@@ -39,22 +40,53 @@ func main(){
 		fmt.Println(index, ":", item)
 	}
 
+	
+	/* 🔹 What is a Map?
+
+	A map is a collection of key-value pairs.
+
+	Think of it like a dictionary in English:
+
+	Word → Definition
+
+	Or a contact list in your phone:
+
+	Name → Phone Number */
+
+	//IN GO
+	//map[keyType]ValueTypes
+
+	//create a map
+	person := map[string]string{
+		"name": "Biond",
+		"role": "Developer",
+	}
+	//access values by key
+	fmt.Println("Name:",person["name"])
+	fmt.Println("Role:",person["role"])
+
+	//contact list
+	phonebook :=map[string]string{
+		"ram": "98456123",
+		"sita": "987456123",
+		"binod": "98806455",
+	}
+	fmt.Println("biond's number:",phonebook["binod"])
+
+	//add new contact
+	phonebook["hari"] = "9761245566"
+
+	//delete a contact
+	delete(phonebook,"sita")
+	
+	//loop through map
+	fmt.Println("phonebook:")
+	for name, number := range phonebook{
+		fmt.Println(name, ":", number)
+	}
 
 
 
 
-
-
-
-
-
-
-	// x, y := 3, 5
-	// fmt.Println("before swap:", x,y)
-
-	// //call swap function 
-	// x, y = swap(x,y)
-
-	// fmt.Println("after swap:", x, y)
 
 }
