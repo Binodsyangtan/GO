@@ -23,6 +23,12 @@ type Product struct{
 	Stock int
 }
 
+func ( p *Product) ApplyDiscound(percent float64){
+	discound := p.Price * percent / 100 
+	p.Price -= discound
+}
+
+
 func main(){
 
 	/* 🔹 What is a Struct?
@@ -42,9 +48,13 @@ func main(){
 	fmt.Println("name of student 1:", s1.Name)
 
 	//create product
-	product := Product{ID: 1, Name:"Laptop",Price:75000.50, Stock: 12}
-	fmt.Println("Product:", product)
-	fmt.Println("Product price:",product.Price)
+	// product := Product{ID: 1, Name:"Laptop",Price:75000.50, Stock: 12}
+	// fmt.Println("Product:", product)
+	// fmt.Println("Product price:",product.Price)
+	laptop := Product{Name: "Laptop", Price: 75000}
+	laptop.ApplyDiscound(10) //10% discount
+	fmt.Println("discounted Price:", laptop.Price)
+
 	
 
  
