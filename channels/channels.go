@@ -15,26 +15,23 @@ import (
 
 // }
 
-//receive
-// func sum(result chan int, num1 int, num2 int) {
-// 	numResult := num1 + num2
-// 	result <- numResult
+// receive
+func sum(result chan int, num1 int, num2 int) {
+	numResult := num1 + num2
+	result <- numResult
 
-// }
-
-
-func ()  {
-	
 }
+
+
 
 func main() {
 
-	//receive
-	// result := make(chan int)
-	// go sum(result, 4, 5)
+	// receive
+	result := make(chan int)
+	go sum(result, 4, 5)
 
-	// res := <-result //blocking                    
-	// fmt.Println("sum of two int", res)
+	res := <-result //blocking                    
+	fmt.Println("sum of two int", res)
 
 	//send
 	// numChan := make(chan int)
